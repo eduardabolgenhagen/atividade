@@ -1,0 +1,23 @@
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+table{
+    border: solid black 1px;
+}
+
+th{
+    font-size: 25px;
+    border: solid black 1px;
+}
+
+td {
+    border: solid black 1px;
+}
