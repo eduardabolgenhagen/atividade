@@ -5,6 +5,10 @@ document.body.appendChild(header);
 header.appendChild(title);
 title.innerText = 'ATIVIDADE JAVASCRIPT';
 
+//main
+let main = document.createElement('main');
+document.body.appendChild(main);
+
 //criar lista
 let listPerson = [
     {name: 'Bruna Alves Mafra' , username : 'BMafra'},
@@ -29,56 +33,30 @@ let listPerson = [
     {name: 'Vytor Augusto Rosa' , username : 'K43RU'}
 ];
 
-//main
-let main = document.createElement('main');
-document.body.appendChild(main);
+let tablePrincipal = document.createElement('div');
+tablePrincipal.className = 'tablePrincipal';
+main.appendChild(tablePrincipal);
 
-//criar tabela
-function createTabela() {let tabela = document.createElement('table');
-main.appendChild(tabela);
-let linhaTabela = document.createElement('tr');
-let tituloNome = document.createElement('th');
-let tituloGIT = document.createElement('th');
-let tituloBotao = document.createElement('th');
+listPerson.forEach(function(element) {
+    let divNames = document.createElement('div');
+    tablePrincipal.appendChild(divNames);
+    divNames.className = 'divNames';
 
-//titulos da tabela
-tituloNome.innerText='Nome Alunos';
-tituloGIT.innerText='GitHub';
-tituloBotao.innerText='Acessar';
-linhaTabela.appendChild(tituloNome);
-linhaTabela.appendChild(tituloGIT);
-linhaTabela.appendChild(tituloBotao);
-tabela.appendChild(linhaTabela);
+    let colunaNomes = document.createElement('div');
+    colunaNomes.className = 'colunaNomes';
+    divNames.appendChild(colunaNomes);
+    colunaNomes.innerText = element.name;
 
-listPerson.forEach(function (element) {
-    console.log('element:', element);
-    const rowTable = getPersonTableRow(
-        element.name,
-        element.username);
+    let colunaUsers = document.createElement('div');
+    colunaUsers.className = 'colunaUsers';
+    divNames.appendChild(colunaUsers);
+    colunaUsers.innerText = element.username;
 
-    tabela.appendChild(rowTable);
-})
+    let buttons = document.createElement('button');
+    buttons.innerText = 'Vizualizar';
+    divNames.appendChild(buttons);
 
-}
-
-createTabela();
-
-function getPersonTableRow(name, username) {
-    const row = document.createElement('tr');
-    const columnName = document.createElement('td');
-    const columnUsername = document.createElement('td');
-    let button = document.createElement('button');
-
-    columnName.innerText = name;
-    columnUsername.innerText = username;
-    button.innerText = 'Acessar';
-
-    row.appendChild(columnName);
-    row.appendChild(columnUsername);
-    row.appendChild(button);
-
-    button.onclick = function(){
-        console.log('hello')
+    buttons.onclick = function(){
+        location.href = `./userPage/index.html?${element.username}`;
     }
-    return row;
-}
+})

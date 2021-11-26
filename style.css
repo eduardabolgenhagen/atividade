@@ -4,20 +4,25 @@ header{
     align-items: center;
 }
 
-main{
+.tablePrincipal{
+    border: solid 1px purple;  
+    width: 60%;
+}
+
+.divNames{
+    border: solid 1px purple;
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
-table{
-    border: solid black 1px;
+    align-items: flex-start;
+    
 }
 
-th{
-    font-size: 25px;
-    border: solid black 1px;
+.colunaNomes{
+    border: solid 1px purple;
+    width: 50%;
+    font-size: large;
 }
-
-td {
-    border: solid black 1px;
+.colunaUsers{
+    border: solid 1px purple;
+    width: 40%;
+    font-size: large;
 }
