@@ -3,3 +3,42 @@ header{
     justify-content: center;
     align-items: center;
 }
+
+.divNome{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: x-large;
+}
+
+.divUser{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: x-large;
+}
+
+.divzona{
+    display: flex;
+    align-items: flex-start;
+    border: purple solid 1px;
+    width: 100%;
+}
+.divIcon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.divRepos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: purple solid 1px;
+    width: 30%;
+}
+
+.divLink{
+    border: purple solid 1px;
+    width: 70%;
+}
